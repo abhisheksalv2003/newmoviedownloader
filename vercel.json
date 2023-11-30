@@ -1,0 +1,8 @@
+{
+"functions": {
+"bot": {
+"runtime": "python",
+"entrypoint": "bot:bot"
+}
+}
+}
