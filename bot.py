@@ -1,12 +1,20 @@
-import telegram
-import os
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
 
-TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('Hello World!')
 
-bot = (link unavailable)(TOKEN)
+def main() -> None:
+    try:
+        updater = Updater("TOKEN", use_context=True)
+        dispatcher = updater.dispatcher
+        dispatcher.add_handler(CommandHandler("start", start))
+        updater.start_polling()
+        updater.idle()
+        print("Bot successfully deployed")
+    except Exception as e:
+        print(f"Error occurred: {e}")
 
-@bot.command(name='start')
-async def start(update, context):
-print(f'Start command received from {update.effective_user.username}')
-
-bot.start_polling()
+if __name__ == '__main__':
+    main()
+  
