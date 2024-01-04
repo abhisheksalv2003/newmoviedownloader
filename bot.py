@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
 
-TOKEN = os.environ.get("TOKEN")
+TOKEN = os.environ.get("6197603731:AAFjEJ2h3TLjoVqUihD2PwGL75LJVq5ypcM")
 
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
