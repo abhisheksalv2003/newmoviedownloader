@@ -26,7 +26,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Initialize Telethon client
-telethon_client = TelegramClient('session', API_ID, API_HASH)
+telethon_client = TelegramClient('data/session', API_ID, API_HASH)
 
 # Ensure data directory exists
 os.makedirs('data', exist_ok=True)
